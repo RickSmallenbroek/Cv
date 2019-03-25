@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+require('startbootstrap-resume/js/resume.min');
+
 window.Vue = require('vue');
 
 /**
