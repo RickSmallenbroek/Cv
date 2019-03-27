@@ -4,7 +4,6 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 require('./bootstrap');
 
 require('startbootstrap-resume/js/resume.min');
@@ -33,3 +32,14 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+if (document.getElementById("settings")) {
+    import("./settings").then(settings => {
+        $(document).ready(() => {
+            settings.githubSwitch();
+            $('#stackOverflowSwitch').on('change', settings.stackOverflowSwitch);
+            $('#facebookSwitch').on('change', settings.facebookSwitch);
+        });
+
+    });
+}

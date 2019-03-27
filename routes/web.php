@@ -11,6 +11,8 @@
 |
 */
 
+// Frontend Routes...
+
 Route::get('/', 'HomeController@index');
 
 // Authentication Routes...
@@ -18,14 +20,18 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-//// Registration Routes...
-//Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//Route::post('register', 'Auth\RegisterController@register');
 
-// Password Reset Routes...
-//Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-//Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-//Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-//Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+// Backend Routes...
+Route::middleware('auth')->group(function () {
 
-Route::get('/home', 'Admin\DashboardController@index');
+    Route::get('/dashboard', 'admin\DashboardController@index')->name('dashboard');
+    Route::get('/settings', 'Admin\SettingsController@index')->name('settings');
+    Route::post('/settings', 'Admin\SettingsController@editActiveLinks')->name('editLinks');
+
+    Route::get('/edit/About', 'Admin\EditPageController@editAboutPage')->name('editAboutPage');
+    Route::get('/edit/Experience', 'Admin\EditPageController@editExperiencePage')->name('editExperiencePage');
+    Route::get('/edit/Education', 'Admin\EditPageController@editEducationPage')->name('editEducationPage');
+    Route::get('/edit/Skills', 'Admin\EditPageController@editSkillsPage')->name('editSkillsPage');
+    Route::get('/edit/Interests', 'Admin\EditPageController@editInterestsPage')->name('editInterestsPage');
+    Route::get('/edit/Awards', 'Admin\EditPageController@editAwardsPage')->name('editAwardsPage');
+});

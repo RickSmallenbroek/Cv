@@ -5,6 +5,12 @@ return [
     'education'             => 'Opleidingen',
     'skills'                => 'Vaardigheden',
     'interests'             => 'Intresses',
-    'awards'                 => 'Prijzen',
-
+    'awards'                => 'Prijzen',
+    'editPages'             => 'Wijzig pagina\'s',
+    'settings'              => 'Instellingen',
+    'dashboard'             => 'Dashboard',
+    'github'                => 'Github',
+    'stack'                 => 'Stack Overflow',
+    'facebook'              => 'Facebook',
+    'link'                  => 'Link',
 ];
