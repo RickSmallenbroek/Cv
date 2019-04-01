@@ -26,9 +26,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', 'admin\DashboardController@index')->name('dashboard');
     Route::get('/settings', 'Admin\SettingsController@index')->name('settings');
-    Route::post('/settings', 'Admin\SettingsController@editActiveLinks')->name('editLinks');
+    Route::post('/settings/editLinks', 'Admin\SettingsController@editActiveLinks')->name('editLinks');
 
-    Route::get('/edit/About', 'Admin\EditPageController@editAboutPage')->name('editAboutPage');
+    Route::get('/edit/About', 'Admin\EditPageController@showEditAbout')->name('showEditAbout');
+    Route::post('/edit/About', 'Admin\EditPageController@editAboutPage')->name('editAboutPage');
     Route::get('/edit/Experience', 'Admin\EditPageController@editExperiencePage')->name('editExperiencePage');
     Route::get('/edit/Education', 'Admin\EditPageController@editEducationPage')->name('editEducationPage');
     Route::get('/edit/Skills', 'Admin\EditPageController@editSkillsPage')->name('editSkillsPage');

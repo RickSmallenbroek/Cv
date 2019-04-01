@@ -37,8 +37,8 @@ if (document.getElementById("settings")) {
     import("./settings").then(settings => {
         $(document).ready(() => {
             settings.githubSwitch();
-            $('#stackOverflowSwitch').on('change', settings.stackOverflowSwitch);
-            $('#facebookSwitch').on('change', settings.facebookSwitch);
+            settings.stackOverflowSwitch();
+            settings.facebookSwitch();
         });
 
     });

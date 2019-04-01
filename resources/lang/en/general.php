@@ -1,6 +1,7 @@
 <?php
 return [
     'about'                 => 'About',
+    'editAbout'             => 'Edit \'about\'',
     'experience'            => 'Experience',
     'education'             => 'Education',
     'skills'                => 'Skills',
@@ -13,5 +14,6 @@ return [
     'stack'                 => 'Stack Overflow',
     'facebook'              => 'Facebook',
     'link'                  => 'Link',
+    'submit'                => 'Submit',
 
 ];

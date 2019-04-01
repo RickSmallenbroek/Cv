@@ -13,6 +13,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
@@ -109,7 +110,7 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="true" aria-expanded="false">@lang('general.editPages')</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"></a>
+                                <a class="dropdown-item" href="{{ route('showEditAbout') }}">@lang('general.editAbout')</a>
                             </div>
                         </li>
                     </ul>
@@ -117,7 +118,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('settings') }}">@lang('general.settings')</a>
+                            <a class="nav-link" href="{{ route('settings') }}"><i class="fa-lg fas fa-cog"></i> @lang('general.settings')</a>
                         </li>
                     </ul>
                 </div>

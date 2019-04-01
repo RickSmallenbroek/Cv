@@ -1,6 +1,7 @@
 <?php
 return [
     'about'                 => 'Over mij',
+    'editAbout'             => 'Wijzig \'Over mij\'',
     'experience'            => 'Ervaringen',
     'education'             => 'Opleidingen',
     'skills'                => 'Vaardigheden',
@@ -13,4 +14,5 @@ return [
     'stack'                 => 'Stack Overflow',
     'facebook'              => 'Facebook',
     'link'                  => 'Link',
+    'submit'                => 'Opslaan',
 ];
