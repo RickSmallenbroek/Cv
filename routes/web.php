@@ -25,6 +25,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', 'admin\DashboardController@index')->name('dashboard');
+    Route::post('/edit/image', 'Admin\DashboardController@changeProfileImage')->name('editImage');
     Route::get('/settings', 'Admin\SettingsController@index')->name('settings');
     Route::post('/settings/editLinks', 'Admin\SettingsController@editActiveLinks')->name('editLinks');
 

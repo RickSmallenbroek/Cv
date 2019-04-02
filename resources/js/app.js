@@ -10,6 +10,14 @@ require('startbootstrap-resume/js/resume.min');
 
 window.Vue = require('vue');
 
+
+/**
+ * This will import SweetAlert2
+ *
+ */
+import Swal from 'sweetalert2';
+
+window.Swal = Swal;
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

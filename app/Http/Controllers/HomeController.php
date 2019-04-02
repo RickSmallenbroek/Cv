@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $about = About::all();
+        return view('welcome')->with(compact('about'));
     }
 }

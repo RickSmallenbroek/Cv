@@ -49168,8 +49168,8 @@ if (document.getElementById("settings")) {
   __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./settings */ "./resources/js/settings.js")).then(function (settings) {
     $(document).ready(function () {
       settings.githubSwitch();
-      $('#stackOverflowSwitch').on('change', settings.stackOverflowSwitch);
-      $('#facebookSwitch').on('change', settings.facebookSwitch);
+      settings.stackOverflowSwitch();
+      settings.facebookSwitch();
     });
   });
 }
