@@ -18,16 +18,17 @@
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.15.2",
+        "sass": "^1.17.4",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-        "@babel/preset-env": "^7.4.2",
+        "@babel/preset-env": "^7.4.3",
         "flag-icon-css": "^3.3.0",
+        "particles.js": "^2.0.0",
         "startbootstrap-resume": "^5.0.5",
-        "sweetalert2": "^8.8.0"
+        "sweetalert2": "^8.8.1"
     }
 }

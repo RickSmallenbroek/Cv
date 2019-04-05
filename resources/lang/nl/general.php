@@ -5,7 +5,7 @@ return [
     'experience'            => 'Ervaringen',
     'education'             => 'Opleidingen',
     'skills'                => 'Vaardigheden',
-    'interests'             => 'Intresses',
+    'interests'             => 'Interesses',
     'awards'                => 'Prijzen',
     'editPages'             => 'Wijzig pagina\'s',
     'settings'              => 'Instellingen',
@@ -15,4 +15,5 @@ return [
     'facebook'              => 'Facebook',
     'link'                  => 'Link',
     'submit'                => 'Opslaan',
+    'upload'                => 'Uploaden',
 ];

@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    @if(Route::is('login'))
+        <div id="particles-js" class="overflow-hidden"></div>
+    @endif
+<div class="container h-100">
+    <div class="row align-items-center" style="height: 100vh;">
+        <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

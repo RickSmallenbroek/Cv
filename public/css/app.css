@@ -12913,8 +12913,35 @@ a.text-dark:focus {
   }
 }
 
+main {
+  position: relative;
+}
+
+main #particles-js {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+html {
+  height: 100vh;
+}
+
+.card-header {
+  border-bottom: 0 !important;
+  background-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+.thickHr {
+  border-top-width: 4px !important;
+  border-top-color: rgba(0, 0, 0, 0.12) !important;
 }
 

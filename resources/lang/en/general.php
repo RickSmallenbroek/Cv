@@ -15,5 +15,6 @@ return [
     'facebook'              => 'Facebook',
     'link'                  => 'Link',
     'submit'                => 'Submit',
+    'upload'                => 'Upload',
 
 ];
