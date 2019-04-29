@@ -27,20 +27,26 @@
         @endif
         @if(!Route::is('login'))
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-                    <div class="row mx-auto" style="width: 100%;">
+                <div class="row mx-auto" style="width: 100%;">
+                    <div class="col-6">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#left-nav"
+                                aria-controls="left-nav" aria-expanded="false" aria-label="Toggle navigation"
+                                style="width: 50px; height: 40px;">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    @guest
+                    @else
                         <div class="col-6">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#left-nav"
-                                    aria-controls="left-nav" aria-expanded="false" aria-label="Toggle navigation" style="width: 50px; height: 40px;">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
-                        <div class="col-6">
-                            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#topbar"
-                                    aria-controls="topbar" aria-expanded="false" aria-label="Toggle navigation" style="width: 50px; height: 40px;">
+                            <button class="navbar-toggler float-right" type="button" data-toggle="collapse"
+                                    data-target="#topbar"
+                                    aria-controls="topbar" aria-expanded="false" aria-label="Toggle navigation"
+                                    style="width: 50px; height: 40px;">
                                 <i class="fa-lg fas fa-cog mx-auto"></i>
                             </button>
                         </div>
-                    <!-- nav-left photo -->
+                @endguest
+                <!-- nav-left photo -->
                     <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
                         <span class="d-block d-lg-none"></span>
                         <span class="d-none d-lg-block">
@@ -50,18 +56,6 @@
                     </a>
                     <div class="navbar-collapse collapse" id="left-nav">
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                   aria-haspopup="true"
-                                   aria-expanded="false">{{App::getLocale()}}</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ url('lang/en') }}"><span
-                                                class="flag-icon flag-icon-gb"></span> @lang('language.english')</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url('lang/nl') }}"><span
-                                                class="flag-icon flag-icon-nl"></span> @lang('language.dutch')</a>
-                                </div>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/#about">@lang('general.about')</a>
                             </li>
@@ -79,6 +73,19 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/#awards">@lang('general.awards')</a>
+                            </li>
+
+                            <li class="nav-item dropdown spaceTop">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">{{App::getLocale()}}</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ url('lang/en') }}"><span
+                                                class="flag-icon flag-icon-gb"></span> @lang('language.english')</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ url('lang/nl') }}"><span
+                                                class="flag-icon flag-icon-nl"></span> @lang('language.dutch')</a>
+                                </div>
                             </li>
                             <!-- Authentication Links -->
                             @guest
@@ -106,6 +113,21 @@
                                 </li>
                             @endguest
                         </ul>
+                        @guest
+                            <div class="container nav-footerlink nav-footerborder large-show">
+                                <div class="row">
+                                    <ul class="navbar-nav mx-auto">
+                                        <li class="nav-item">
+                                            <div class="row">
+                                                <a class="nav-link col-6 pl-5 large-show" href="{{ url('/login') }}">Login</a>
+                                                <a class="nav-link col-6 float-lg-right pr-5 large-show" href="/">Contact</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        @else
+                        @endguest
                     </div>
                 </div>
             </nav>

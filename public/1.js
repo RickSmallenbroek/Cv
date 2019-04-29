@@ -19,7 +19,7 @@ function githubSwitch() {
     $.post({
       url: "/settings/editLinks",
       data: {
-        for: $('#personGithub').val(),
+        "for": $('#personGithub').val(),
         active: $('#githubSwitch').is(':checked'),
         _token: _token
       },
@@ -32,7 +32,7 @@ function stackOverflowSwitch() {
     $.post({
       url: "/settings/editLinks",
       data: {
-        for: $('#personStack').val(),
+        "for": $('#personStack').val(),
         active: $('#stackOverflowSwitch').is(':checked'),
         _token: _token
       },
@@ -45,7 +45,7 @@ function facebookSwitch() {
     $.post({
       url: "/settings/editLinks",
       data: {
-        for: $('#personFacebook').val(),
+        "for": $('#personFacebook').val(),
         active: $('#facebookSwitch').is(':checked'),
         _token: _token
       },

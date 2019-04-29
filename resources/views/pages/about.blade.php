@@ -1,4 +1,4 @@
-<section class="p-3 p-lg-5 d-flex align-items-center" id="about">
+<section class="p-3 p-lg-5 d-flex align-items-center" id="about" style="height: 100vh;">
     <div class="">
         <h1 class="mb-0">{{$about->where('for', 'personName')->first()->content}}
         </h1>

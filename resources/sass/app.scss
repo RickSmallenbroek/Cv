@@ -29,12 +29,32 @@
 
 //when on tablet or pc
 @media (min-width: 922px){
-
+  .spaceTop{
+    padding-top: 100px;
+  }
+  .nav-footerlink{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-left: 16px;
+  }
+  .nav-footerborder{
+    border-top: 2px solid rgba(0, 0, 0, 0.12);
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+  }
+  .large-show{
+    display: block;
+  }
 }
 //when on mobile
 @media (max-width: 922px){
   .topSpacer{
     //z-index: 1031;
+  }
+  .large-show{
+    display: none;
   }
 }
 
