@@ -40,3 +40,4 @@ if (document.getElementById("settings")) {
 
     });
 }
+

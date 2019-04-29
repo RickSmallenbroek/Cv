@@ -4,9 +4,8 @@
 
 // Variables
 @import 'variables';
-
+@import '~startbootstrap-resume/css/resume.css';
 @import '~flag-icon-css/sass/flag-icon';
-@import '~startbootstrap-resume/scss/resume';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "particles";
@@ -15,10 +14,6 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-html {
-  height: 100vh;
-}
-
 
 .card-header{
   border-bottom: 0!important;
@@ -29,3 +24,17 @@ html {
   border-top-width: 4px !important;
   border-top-color: rgba(0, 0, 0, 0.12)!important;
 }
+
+
+
+//when on tablet or pc
+@media (min-width: 922px){
+
+}
+//when on mobile
+@media (max-width: 922px){
+  .topSpacer{
+    //z-index: 1031;
+  }
+}
+

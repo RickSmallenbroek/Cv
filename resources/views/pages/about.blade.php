@@ -1,12 +1,12 @@
-<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-    <div class="w-100">
+<section class="p-3 p-lg-5 d-flex align-items-center" id="about">
+    <div class="">
         <h1 class="mb-0">{{$about->where('for', 'personName')->first()->content}}
         </h1>
-        <div class="subheading mb-5">
+        <div class="mb-5">
             <a href="mailto:{{$about->where('for', 'personMail')->first()->content}}">
                 {{$about->where('for', 'personMail')->first()->content}}</a>
         </div>
-        <p class="lead mb-5">{{$about->where('for', 'personAbout')->first()->content}}</p>
+        <p class="mb-5">{{$about->where('for', 'personAbout')->first()->content}}</p>
         <div class="social-icons">
             @if($about->where('for', 'personGithub')->first()->active === 1)
             <a href="{{$about->where('for', 'personGithub')->first()->content}}">
