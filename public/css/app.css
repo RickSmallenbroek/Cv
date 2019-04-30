@@ -12939,7 +12939,7 @@ main #particles-js {
 
 @media (min-width: 922px) {
   .spaceTop {
-    padding-top: 100px;
+    margin-top: 100px;
   }
 
   .nav-footerlink {
@@ -12959,11 +12959,52 @@ main #particles-js {
   .large-show {
     display: block;
   }
+
+  .navbarAdmin {
+    position: relative !important;
+  }
+
+  .dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .navbar .sub-menu:before {
+    border-bottom: 7px solid transparent;
+    border-left: none;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    left: -7px;
+    top: 10px;
+  }
+
+  .dropdown-toggle {
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+    margin-top: -15px;
+  }
 }
 
 @media (max-width: 922px) {
   .large-show {
     display: none;
+  }
+
+  .navbarAdmin {
+    position: fixed !important;
+    z-index: 1029;
+    background-color: #3490dc;
+    width: 100%;
+  }
+
+  .navbar-nav .dropdown-menu {
+    position: absolute !important;
+    width: 100%;
   }
 }
 

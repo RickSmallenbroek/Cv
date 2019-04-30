@@ -25,7 +25,7 @@
                                 <div class="container mt-2 mb-2">
 {{--                                    <div class="row">--}}
                                         <form action="{{ route('editLinks') }}" method="POST">
-                                            <div class="col-6 mt-4">
+                                            <div class="col-lg-6 col-sm-12 mt-4">
                                                 <label>@lang('general.github') @lang('general.link')</label>
                                                 <input type="hidden" id="personGithub" name="personGithub"
                                                        value="personGithub">
@@ -36,7 +36,7 @@
                                                            for="githubSwitch">@lang('settings.switch')</label>
                                                 </div>
                                             </div>
-                                            <div class="col-6 mt-4">
+                                            <div class="col-lg-6 col-sm-12 mt-4">
                                                 <label>@lang('general.stack') @lang('general.link')</label>
                                                 <input type="hidden" id="personStack" name="personStack"
                                                        value="personStack">
@@ -47,7 +47,7 @@
                                                            for="stackOverflowSwitch">@lang('settings.switch')</label>
                                                 </div>
                                             </div>
-                                            <div class="col-6 mt-4">
+                                            <div class="col-lg-6 col-sm-12 mt-4">
                                                 <label>@lang('general.facebook') @lang('general.link')</label>
                                                 <input type="hidden" id="personFacebook" name="personFacebook"
                                                        value="personFacebook">

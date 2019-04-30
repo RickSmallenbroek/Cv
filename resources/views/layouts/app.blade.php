@@ -28,16 +28,19 @@
         @if(!Route::is('login'))
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
                 <div class="row mx-auto" style="width: 100%;">
-                    <div class="col-6">
+                    <div class="col-3 d-lg-none d-block">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#left-nav"
                                 aria-controls="left-nav" aria-expanded="false" aria-label="Toggle navigation"
                                 style="width: 50px; height: 40px;">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
+                        <a class="navbar-brand js-scroll-trigger col-6 d-lg-none d-block mr-0 text-center" href="{{ url('/') }}">
+                            <span class="d-block d-lg-none"></span>
+                        </a>
                     @guest
                     @else
-                        <div class="col-6">
+                        <div class="col-3 d-lg-none d-block">
                             <button class="navbar-toggler float-right" type="button" data-toggle="collapse"
                                     data-target="#topbar"
                                     aria-controls="topbar" aria-expanded="false" aria-label="Toggle navigation"
@@ -48,13 +51,13 @@
                 @endguest
                 <!-- nav-left photo -->
                     <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
-                        <span class="d-block d-lg-none"></span>
-                        <span class="d-none d-lg-block">
+                            <span class="d-none d-lg-block">
                     <img class="img-fluid img-profile rounded-circle mt-5"
                          src="{{url ('storage/images/avatar/avatar.jpg')}}" alt="" style="height: 200px; width: 200px;">
                     </span>
                     </a>
-                    <div class="navbar-collapse collapse" id="left-nav">
+
+                    <div class="navbar-collapse collapse text-center" id="left-nav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="/#about">@lang('general.about')</a>
@@ -79,7 +82,7 @@
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                    aria-haspopup="true"
                                    aria-expanded="false">{{App::getLocale()}}</a>
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu dropdown-menu-right shadow">
                                     <a class="dropdown-item" href="{{ url('lang/en') }}"><span
                                                 class="flag-icon flag-icon-gb"></span> @lang('language.english')</a>
                                     <div class="dropdown-divider"></div>
@@ -87,7 +90,6 @@
                                                 class="flag-icon flag-icon-nl"></span> @lang('language.dutch')</a>
                                 </div>
                             </li>
-                            <!-- Authentication Links -->
                             @guest
 
                             @else
@@ -96,19 +98,10 @@
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow w-100" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item"
-                                           href="{{ route('dashboard') }}">@lang('general.dashboard')</a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                              style="display: none;">
-                                            @csrf
-                                        </form>
+                                           href="{{ route('dashboard') }}">@lang('general.dashboard')
+                                            <i class="fa fa-arrow-right float-right pt-1 pb-1" aria-hidden="true"></i></a>
                                     </div>
                                 </li>
                             @endguest
@@ -119,14 +112,34 @@
                                     <ul class="navbar-nav mx-auto">
                                         <li class="nav-item">
                                             <div class="row">
-                                                <a class="nav-link col-6 pl-5 large-show" href="{{ url('/login') }}">Login</a>
-                                                <a class="nav-link col-6 float-lg-right pr-5 large-show" href="/">Contact</a>
+                                                <a class="nav-link col-6 pl-5 large-show" href="{{ url('/login') }}">@lang('general.login')</a>
+                                                <a class="nav-link col-6 float-lg-right pr-5 large-show" href="/">@lang('general.contact')</a>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         @else
+                            <div class="container nav-footerlink nav-footerborder large-show">
+                                <div class="row">
+                                    <ul class="navbar-nav mx-auto">
+                                        <li class="nav-item">
+                                            <div class="row">
+                                                <a class="nav-link col-6 pl-5 large-show" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                      style="display: none;">
+                                                    @csrf
+                                                </form>
+                                                <a class="nav-link col-6 float-lg-right pr-5 large-show" href="/">@lang('general.contact')</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         @endguest
                     </div>
                 </div>
@@ -137,9 +150,7 @@
                 @guest
 
                 @else
-                    <nav class="navbar navbar-expand-md navbar-light topSpacer">
-
-
+                    <nav class="navbar navbar-expand-md navbar-light topSpacer navbarAdmin">
                         <div class="collapse navbar-collapse" id="topbar">
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav mr-auto">
@@ -147,9 +158,10 @@
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
                                        role="button"
                                        aria-haspopup="true" aria-expanded="false">@lang('general.editPages')</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item"
-                                           href="{{ route('showEditAbout') }}">@lang('general.editAbout')</a>
+                                    <div class="dropdown-menu shadow">
+                                        <a class="dropdown-item "
+                                           href="{{ route('showEditAbout') }}">@lang('general.editAbout')
+                                            <i class="fa fa-arrow-right float-right pt-1 pb-1" aria-hidden="true"></i></a>
                                     </div>
                                 </li>
                             </ul>

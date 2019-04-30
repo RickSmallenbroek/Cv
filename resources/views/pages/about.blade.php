@@ -1,3 +1,9 @@
+<div>
+    <span class="d-block d-lg-none">
+        <img class="img-fluid img-profile rounded-circle mt-5"
+             src="{{url ('storage/images/avatar/avatar.jpg')}}" alt="" style="height: 200px; width: 200px;">
+    </span>
+</div>
 <section class="p-3 p-lg-5 d-flex align-items-center" id="about" style="height: 100vh;">
     <div class="">
         <h1 class="mb-0">{{$about->where('for', 'personName')->first()->content}}
@@ -9,20 +15,20 @@
         <p class="mb-5">{{$about->where('for', 'personAbout')->first()->content}}</p>
         <div class="social-icons">
             @if($about->where('for', 'personGithub')->first()->active === 1)
-            <a href="{{$about->where('for', 'personGithub')->first()->content}}">
-                <i class="fab fa-github"></i>
-            </a>
+                <a href="{{$about->where('for', 'personGithub')->first()->content}}">
+                    <i class="fab fa-github"></i>
+                </a>
             @endif
             @if($about->where('for', 'personStack')->first()->active === 1)
-            <a href="{{$about->where('for', 'personStack')->first()->content}}">
-                <i class="fab fa-stack-overflow"></i>
-            </a>
-                @endif
+                <a href="{{$about->where('for', 'personStack')->first()->content}}">
+                    <i class="fab fa-stack-overflow"></i>
+                </a>
+            @endif
             @if($about->where('for' , 'personFacebook')->first()->active === 1)
-            <a href="{{$about->where('for', 'personFacebook')->first()->content}}">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-                @endif
+                <a href="{{$about->where('for', 'personFacebook')->first()->content}}">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            @endif
         </div>
     </div>
 </section>

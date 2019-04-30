@@ -1,5 +1,7 @@
 <?php
 return [
+    'login'                 => 'Login',
+    'contact'               => 'Contact',
     'about'                 => 'Over mij',
     'editAbout'             => 'Wijzig \'Over mij\'',
     'experience'            => 'Ervaringen',
